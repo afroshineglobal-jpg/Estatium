@@ -1,0 +1,17 @@
+{
+  "name": "estate-poc",
+  "version": "1.0.0",
+  "description": "Estate Management POC - Full Stack",
+  "scripts": {
+    "setup": "npm run setup:server && npm run setup:client",
+    "setup:server": "cd server && npm install && npx prisma db push && node prisma/seed.js",
+    "setup:client": "cd client && npm install",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
